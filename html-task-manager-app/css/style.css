@@ -1,0 +1,112 @@
+/* カスタムスタイル */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+.card {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.footer {
+    margin-top: auto;
+}
+
+/* カンバンボードスタイル */
+.kanban-column {
+    min-height: 400px;
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.kanban-column::-webkit-scrollbar {
+    width: 8px;
+}
+
+.kanban-column::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.kanban-column::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.kanban-column::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* タスクカードのアニメーション */
+.task-card {
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* アラートのアニメーション */
+.alert {
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .kanban-column {
+        max-height: 300px !important;
+    }
+}
+
+/* バッジのスタイル調整 */
+.badge {
+    font-size: 0.85rem;
+    padding: 0.35em 0.65em;
+}
+
+/* フォームのスタイル調整 */
+.form-label {
+    font-weight: 500;
+}
+
+/* 空の列のスタイル */
+.empty-column {
+    text-align: center;
+    color: #6c757d;
+    padding: 2rem 1rem;
+}
+
+.empty-column i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Made with Bob */
