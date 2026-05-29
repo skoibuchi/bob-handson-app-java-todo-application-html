@@ -1,11 +1,11 @@
-# TaskManager - 分離版（HTML/CSS/JavaScript）
+# TaskManager
 
 HTML/CSS/JavaScriptで構成されたタスク管理アプリケーション
 
 ## ファイル構成
 
 ```
-separated/
+html-task-manager-app/
 ├── index.html          # メインHTMLファイル
 ├── css/
 │   └── style.css      # スタイルシート
