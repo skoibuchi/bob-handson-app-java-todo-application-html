@@ -68,6 +68,7 @@ graph LR
 
 プロジェクト配下の以下のフォルダにMarkdown形式でファイルを配置：
 
+- **全モード共通**: `.bob/rules`
 - **Planモード**: `.bob/rules-plan`
 - **Codeモード**: `.bob/rules-code`
 - **Advancedモード**: `.bob/rules-advanced`
