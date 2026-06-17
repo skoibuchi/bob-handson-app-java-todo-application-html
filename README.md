@@ -29,6 +29,17 @@ Bobにはそれぞれに特化したモードが存在します。
 - コード変更は行わず、分析と情報提供のみ
 - Mermaid図を使った視覚的な説明が可能
 
+### Orchestratorモード
+- 複雑な複数ステップのプロジェクトを調整・管理
+- 大規模タスクをサブタスクに分解し、ワークフローを管理
+- サブタスクごとに最適なモード（Plan/Code/Advanced/Ask等）を自動的に適用
+- 複数の専門領域やドメインにまたがる作業の調整に使用
+
+### Java Modernizationモード
+- Javaバージョンのアップグレードとアプリケーションの再プラットフォーム化に特化
+- WebSphereからLibertyへの移行をサポート
+- レガシーJavaアプリケーションのモダナイゼーションに使用
+
 ### モード間の遷移フロー
 
 ```mermaid
@@ -73,6 +84,7 @@ graph LR
 - **Codeモード**: `.bob/rules-code`
 - **Advancedモード**: `.bob/rules-advanced`
 - **Askモード**: `.bob/rules-ask`
+- **Orchestratorモード**: `.bob/rules-orchestrator`
 - **Java Modernizationモード**: `.bob/rules-javamodernization`
 
 <img src="./images/bob-project-instruction.png" alt="プロジェクト設定" width="400">
