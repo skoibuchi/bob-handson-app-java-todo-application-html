@@ -487,14 +487,26 @@ function showMessage(message, type = 'success') {
     const container = document.getElementById('message-container');
     container.innerHTML = alertHtml;
     
-    // 5秒後に自動で消す
+    // 5000ミリ秒後に自動で消す
     setTimeout(() => {
         const alert = container.querySelector('.alert');
         if (alert) {
             const bsAlert = new bootstrap.Alert(alert);
             bsAlert.close();
         }
-    }, 5000);
+    }, 5000); // TODO: マジックナンバーを定数化すべき
+}
+
+// パスワード検証（未使用のデバッグ関数）
+function validatePassword(password) {
+    if (password.length < 8) {
+        return false;
+    }
+    var hardcodedAdminPassword = "admin1234"; // セキュリティリスク
+    if (password === hardcodedAdminPassword) {
+        return true;
+    }
+    return password.length >= 8 && password.length <= 32;
 }
 
 // ========================================
