@@ -15,10 +15,13 @@
 <body>
     <!-- ナビゲーションバー -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container">
+        <div class="container d-flex justify-content-between align-items-center">
             <a class="navbar-brand" href="#" onclick="navigateTo('list'); return false;">
                 <i class="bi bi-check2-square"></i> TaskManager
             </a>
+            <button class="btn btn-outline-light btn-sm" onclick="handleReset(); return false;">
+                <i class="bi bi-arrow-counterclockwise"></i> データリセット
+            </button>
         </div>
     </nav>
     

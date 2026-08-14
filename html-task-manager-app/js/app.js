@@ -607,6 +607,19 @@ function handleDelete(id) {
     }
 }
 
+/**
+ * データをリセットして初期状態に戻す
+ */
+function handleReset() {
+    if (confirm('データを初期状態にリセットします。現在のタスクはすべて削除されます。よろしいですか？')) {
+        localStorage.removeItem(STORAGE_KEY);
+        cachedData = null;
+        initializeData();
+        showMessage('データをリセットしました', 'success');
+        navigateTo('list');
+    }
+}
+
 // ========================================
 // ユーティリティ関数
 // ========================================
