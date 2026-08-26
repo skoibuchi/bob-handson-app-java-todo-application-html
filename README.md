@@ -116,12 +116,18 @@ Bobにて展開先のフォルダを開いてください。以下の構成に�
 - **`templates`**: 設計書のテンプレートを格納しています
 - **`html-task-manager-app`**: デモ用のタスク管理Webアプリケーション（HTML/CSS/JavaScript）
 
-#### ⅲ. ルール・テンプレートの確認
+#### ⅲ. 動作確認
+
+[`html-task-manager-app/README.md`](./html-task-manager-app/README.md)を参考に、実行して、動作を確認してください。
+
+<img src="./images/sample-java-app.png" alt="サンプルアプリ画面" width="800">
+
+### ルール・テンプレートの確認
 
 Bobはプロジェクト配下の `.bob/rules` フォルダにあるルールファイルを自動的に読み込みます。
 このプロジェクトでは、Bobの振る舞いをプロジェクト固有にカスタマイズするルールと、設計書の出力フォーマットを統一するためのテンプレートがあらかじめ用意されています。
 
-**ルールファイルの確認**
+#### ルールファイルの確認
 
 以下のファイルを開いて、内容を確認してください。
 
@@ -133,7 +139,7 @@ Bobはプロジェクト配下の `.bob/rules` フォルダにあるルールフ
 
 特に `.bob/rules/rule.md` の「設計書生成ルール」では、**設計書を作成する際は必ず `templates/` フォルダのテンプレートに準拠すること**が指示されています。
 
-**テンプレートの確認**
+#### テンプレートの確認
 
 設計書の出力フォーマットを統一するためのテンプレートが `templates/` フォルダに格納されています。
 
@@ -144,12 +150,6 @@ Bobはプロジェクト配下の `.bob/rules` フォルダにあるルールフ
 | [`templates/detailed_design_template.md`](templates/detailed_design_template.md) | 詳細設計書テンプレート |
 
 ハンズオンの「1. 既存アプリの解析」で設計書を生成した際に、これらのテンプレートに沿ったフォーマットで出力されることを確認してください。
-
-#### ⅳ. 動作確認
-
-[`html-task-manager-app/README.md`](./html-task-manager-app/README.md)を参考に、実行して、動作を確認してください。
-
-<img src="./images/sample-java-app.png" alt="サンプルアプリ画面" width="800">
 
 ---
 
