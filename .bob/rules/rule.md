@@ -49,3 +49,21 @@
 
 2. テストの実行
     - QUnitを使用する場合、テストはAdvancedモード/Agentモードで実行すること。
+
+3. QUnit テストファイル作成時の注意事項
+    - (**重要**) `<script>` の読み込み順序は必ず以下の順にすること。順序を誤るとQUnitが未定義エラーになる。
+        1. QUnit CSS (`<link>`)
+        2. QUnit JS (`<script src="qunit-x.x.x.js">`)
+        3. テストモードフラグ (`<script>window.QUNIT_TEST_MODE = true;</script>`)
+        4. テスト対象の JS (`<script src="../js/app.js">`)
+        5. テストコード (`<script>...</script>`)
+
+    - (**重要**) アプリの JS に `DOMContentLoaded` イベントリスナーや `window.addEventListener('error', ...)` グローバルエラーハンドラーが含まれている場合、テスト実行中にこれらが発火するとQUnitの実行が妨害される。以下の対策を必ず実施すること。
+        - アプリの JS 側に `if (!window.QUNIT_TEST_MODE) { ... }` ガードを追加し、テスト時は初期化処理とエラーハンドラーをスキップする。
+        - テスト HTML では `app.js` 読み込み前に `window.QUNIT_TEST_MODE = true;` を設定する。
+
+    - アプリの JS が `getElementById` で参照するすべての DOM 要素（例: `#message-container`, `#main-content`）をテスト HTML にも用意すること。要素が存在しない場合、`DOMContentLoaded` 時にエラーが発生してテストが失敗する。
+
+    - `localStorage` に依存する関数をテストする場合、アプリ JS のキャッシュ変数（例: `cachedData`）も `null` にリセットすること。`localStorage` をクリアするだけでは古いキャッシュが残り、テスト結果が汚染される。各モジュールの `beforeEach` / `afterEach` で必ず両方をリセットする。
+
+    - QUnit の URL に `?testId=xxx` が残っている状態でテストファイルを作り直すと「No tests matched the testId」エラーになる。クエリパラメータを除いた URL で再アクセスすること。
