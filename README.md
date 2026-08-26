@@ -104,7 +104,7 @@ graph LR
 
 タスク管理Webアプリケーションを以下から取得してください。
 
-- [GitHub](https://github.com/skoibuchi/bob-handson-app-java-todo-application.git)
+- [GitHub](https://github.com/skoibuchi/bob-handson-app-java-todo-application-html.git)
 
 #### ⅱ. フォルダ構成の確認
 
