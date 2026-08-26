@@ -116,7 +116,36 @@ Bobにて展開先のフォルダを開いてください。以下の構成に�
 - **`templates`**: 設計書のテンプレートを格納しています
 - **`html-task-manager-app`**: デモ用のタスク管理Webアプリケーション（HTML/CSS/JavaScript）
 
-#### ⅲ. 動作確認
+#### ⅲ. ルール・テンプレートの確認
+
+Bobはプロジェクト配下の `.bob/rules` フォルダにあるルールファイルを自動的に読み込みます。
+このプロジェクトでは、Bobの振る舞いをプロジェクト固有にカスタマイズするルールと、設計書の出力フォーマットを統一するためのテンプレートがあらかじめ用意されています。
+
+**ルールファイルの確認**
+
+以下のファイルを開いて、内容を確認してください。
+
+| ファイル | 説明 |
+|---------|------|
+| [`.bob/rules/rule.md`](.bob/rules/rule.md) | 全モード共通ルール（設計書生成ルール・テストルールなど） |
+| [`.bob/rules-plan/rule.md`](.bob/rules-plan/rule.md) | Planモード固有ルール（要件確認・計画承認フローなど） |
+| [`.bob/rules-agent/rule.md`](.bob/rules-agent/rule.md) | Agentモード固有ルール（テスト実行方法など） |
+
+特に `.bob/rules/rule.md` の「設計書生成ルール」では、**設計書を作成する際は必ず `templates/` フォルダのテンプレートに準拠すること**が指示されています。
+
+**テンプレートの確認**
+
+設計書の出力フォーマットを統一するためのテンプレートが `templates/` フォルダに格納されています。
+
+| ファイル | 説明 |
+|---------|------|
+| [`templates/requirements_template.md`](templates/requirements_template.md) | 要件定義書テンプレート |
+| [`templates/basic_design_template.md`](templates/basic_design_template.md) | 基本設計書テンプレート |
+| [`templates/detailed_design_template.md`](templates/detailed_design_template.md) | 詳細設計書テンプレート |
+
+ハンズオンの「1. 既存アプリの解析」で設計書を生成した際に、これらのテンプレートに沿ったフォーマットで出力されることを確認してください。
+
+#### ⅳ. 動作確認
 
 [`html-task-manager-app/README.md`](./html-task-manager-app/README.md)を参考に、実行して、動作を確認してください。
 
