@@ -55,7 +55,7 @@ function initializeData() {
                 description: 'Spring Bootの基礎を学習する',
                 status: 'IN_PROGRESS',
                 priority: 'HIGH',
-                dueDate: '2026-03-01',
+                dueDate: generateRandomDueDate(),
                 createdAt: now,
                 updatedAt: now
             },
@@ -65,7 +65,7 @@ function initializeData() {
                 description: 'タスク管理アプリのDB設計を行う',
                 status: 'DONE',
                 priority: 'HIGH',
-                dueDate: '2026-02-25',
+                dueDate: generateRandomDueDate(),
                 createdAt: now,
                 updatedAt: now
             },
@@ -75,7 +75,7 @@ function initializeData() {
                 description: 'UIのデザインを作成する',
                 status: 'TODO',
                 priority: 'MEDIUM',
-                dueDate: '2026-03-05',
+                dueDate: generateRandomDueDate(),
                 createdAt: now,
                 updatedAt: now
             },
@@ -85,7 +85,7 @@ function initializeData() {
                 description: '単体テストと結合テストを実施する',
                 status: 'ON_HOLD',
                 priority: 'MEDIUM',
-                dueDate: '2026-03-10',
+                dueDate: generateRandomDueDate(),
                 createdAt: now,
                 updatedAt: now
             },
@@ -95,7 +95,7 @@ function initializeData() {
                 description: 'README.mdを作成する',
                 status: 'TODO',
                 priority: 'LOW',
-                dueDate: '2026-03-15',
+                dueDate: generateRandomDueDate(),
                 createdAt: now,
                 updatedAt: now
             }

@@ -331,3 +331,18 @@ function formatDateTime(isoString) {
     const seconds = String(date.getSeconds()).padStart(2, '0');
     return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
 }
+
+/**
+ * Generates a random due date string (today + 5 to 9 days).
+ * Returns a date within ±2 days of one week from today.
+ * @returns {string} Due date in YYYY-MM-DD format
+ */
+function generateRandomDueDate() {
+    const numDays = Math.floor(Math.random() * 5) + 5; // 5〜9日
+    const objDate = new Date();
+    objDate.setDate(objDate.getDate() + numDays);
+    const strYear = objDate.getFullYear();
+    const strMonth = String(objDate.getMonth() + 1).padStart(2, '0');
+    const strDay = String(objDate.getDate()).padStart(2, '0');
+    return `${strYear}-${strMonth}-${strDay}`;
+}
