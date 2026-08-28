@@ -74,7 +74,7 @@ function initializeData() {
                 description: 'Spring Bootの基礎を学習する',
                 status: 'IN_PROGRESS',
                 priority: 'HIGH',
-                dueDate: '2026-03-01',
+                dueDate: generateRandomDueDate(),
                 createdAt: now,
                 updatedAt: now
             },
@@ -84,7 +84,7 @@ function initializeData() {
                 description: 'タスク管理アプリのDB設計を行う',
                 status: 'DONE',
                 priority: 'HIGH',
-                dueDate: '2026-02-25',
+                dueDate: generateRandomDueDate(),
                 createdAt: now,
                 updatedAt: now
             },
@@ -94,7 +94,7 @@ function initializeData() {
                 description: 'UIのデザインを作成する',
                 status: 'TODO',
                 priority: 'MEDIUM',
-                dueDate: '2026-03-05',
+                dueDate: generateRandomDueDate(),
                 createdAt: now,
                 updatedAt: now
             },
@@ -104,7 +104,7 @@ function initializeData() {
                 description: '単体テストと結合テストを実施する',
                 status: 'ON_HOLD',
                 priority: 'MEDIUM',
-                dueDate: '2026-03-10',
+                dueDate: generateRandomDueDate(),
                 createdAt: now,
                 updatedAt: now
             },
@@ -114,7 +114,7 @@ function initializeData() {
                 description: 'README.mdを作成する',
                 status: 'TODO',
                 priority: 'LOW',
-                dueDate: '2026-03-15',
+                dueDate: generateRandomDueDate(),
                 createdAt: now,
                 updatedAt: now
             }
@@ -607,6 +607,19 @@ function handleDelete(id) {
     }
 }
 
+/**
+ * データをリセットして初期状態に戻す
+ */
+function handleReset() {
+    if (confirm('データを初期状態にリセットします。現在のタスクはすべて削除されます。よろしいですか？')) {
+        localStorage.removeItem(STORAGE_KEY);
+        cachedData = null;
+        initializeData();
+        showMessage('データをリセットしました', 'success');
+        navigateTo('list');
+    }
+}
+
 // ========================================
 // ユーティリティ関数
 // ========================================
@@ -632,6 +645,20 @@ function formatDateTime(isoString) {
     const minutes = String(date.getMinutes()).padStart(2, '0');
     const seconds = String(date.getSeconds()).padStart(2, '0');
     return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+}
+
+/**
+ * ランダム期限日生成（今日 + 5〜9日）
+ * 1週間後 ±2日 の範囲でランダムな YYYY-MM-DD 文字列を返す
+ */
+function generateRandomDueDate() {
+    const days = Math.floor(Math.random() * 5) + 5; // 5〜9日
+    const date = new Date();
+    date.setDate(date.getDate() + days);
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
 }
 
 // ========================================
