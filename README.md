@@ -395,3 +395,6 @@ Bobの各モードを適切に使い分けることで、効率的な開発が�
 【出力形式】
 サーバー不要のスタンドアロンHTMLとして出力してください。
 ```
+
+# 成果物置き場
+[https://ibm.box.com/s/wkn3y786uxgntm6x1o5bumxzit7thuwg](https://ibm.box.com/s/wkn3y786uxgntm6x1o5bumxzit7thuwg)
